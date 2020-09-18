@@ -1,0 +1,15 @@
+- name: This play will install, configure and deploy custom web page into nginx web server
+  hosts: all 
+  become: yes
+  become_method:  su
+  tasks:
+    - name: Stop nginx web server on all
+      service: name=nginx state=stopped
+      
+    - name: remove nginx web server in Ubuntu
+      when: ansible_distribution == "Ubuntu" and ansible_os_family == "Debian"
+      apt: name=nginx state=absent update_cache=yes
+
+    - name: remove nginx web server in CentOS 
+      when: ansible_distribution == "CentOS" and ansible_os_family == "RedHat"
+      yum: name=nginx state=absent
