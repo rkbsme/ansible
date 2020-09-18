@@ -1,0 +1,12 @@
+{
+    "company_name": "abridge Solutions", 
+    "contact_email": "tirumala@abridgesolutions.net", 
+    "contact_name": "Tirumala Reddy", 
+    "hostname": "2e6f2d0d7def447ea6e6ac97cc2310f0", 
+    "instance_count": 10, 
+    "license_date": 1600499219, 
+    "license_key": "47012728ddcf3562fc2bbbaea1dcf6b6842567d095452b685a216dc9e08a1987", 
+    "license_type": "enterprise", 
+    "subscription_name": "Red Hat Ansible Tower, Standard (10 Managed Nodes) Trial", 
+    "trial": true
+}

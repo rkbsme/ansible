@@ -1,0 +1,5 @@
+- name: This is simple playbook
+  hosts: all
+  tasks:
+    - name: ping the ansible node
+      ping:

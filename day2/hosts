@@ -1,0 +1,8 @@
+[all]
+centos ansible_user=root ansible_password=root ansible_host=192.168.197.5
+ubuntu ansible_user=ansible ansible_host=192.168.197.129
+
+[all:vars]
+ansible_password=ansible
+ansible_become_user=root
+ansible_become_password=root

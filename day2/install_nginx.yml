@@ -1,0 +1,27 @@
+- name: This is simple playbook
+  hosts: ubuntu
+  become: yes
+  become_method: su
+  vars:
+    - tektutor_greeting_msg: DevOps!
+    - tektutor_provisioner_tool: VMWare Workstation
+    - tektutor_conf_mgr_tool: Ansible by rkbsme
+  tasks:
+    - name: ping the ansible node
+      apt: name=nginx state=latest update_cache=yes
+
+    - name: configure nginx
+      copy: src=default dest=/etc/nginx/sites-available/default
+      
+    - name: Create the custom web root folder in Ubuntu
+      file: path=/var/html state=directory mode=0777
+      
+    - name: Restart nginx web server in Ubuntu
+      service: name=nginx state=restarted
+        
+    - name: Deploy custom web page into nginx web server in Ubuntu
+      template: src=index.html.j2 dest=/var/html/index.html mode=0777
+
+#    - name: changing index page
+#      copy: src=index.html dest=/var/www/html/index.nginx-debian.html
+#      #copy: src=index.nginx-debian.html dest=/var/www/html/index.nginx-debian.html
